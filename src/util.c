@@ -24,15 +24,12 @@ void            _gc(Q *, uint *, node *);                       // Executing GC
 void
 np_solve()
 {
-	/* Initiating phase */
 	uint * result_arr = _init_result_arr(); // For saving the min result value in width (index).
 	Q * q = _init_bfs(result_arr);          // Make essentials before executing BFS.
-
 	node * result = _bfs(q, result_arr);    // Execute BFS.
-
 	strcpy(res.t, result->until);           // Save the result
 	res.hamD = result->maxhd;
-	//printf("d hamm distance : %u\n", _max_hamm(result->until, m));
+	//printf("d hamm distance : %u\n", _max_hamm(result->until, m)); // For DEBUG
 	_gc(q, result_arr, result);
 }
 

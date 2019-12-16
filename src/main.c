@@ -36,14 +36,17 @@ main(int argc, char * argv[])
 void
 _print_result()
 {
-	fprintf(stdout, "string t: %s\n", res.t);
-	fprintf(stdout, "d-value: %d\n", res.hamD);
+	FILE * output = fopen("output.txt", "wt");
+	fprintf(output, "string t: %s\n", res.t);
+	fprintf(output, "d-value: %d\n", res.hamD);
+	fclose(output);
 }
 
 int
 _fin()
 {
 	fclose(_input);
+	free(res.t);
 	long long fin_t = _current_t();
 	printf("%lld milliseconds consumed\n", fin_t - _start_t);
 

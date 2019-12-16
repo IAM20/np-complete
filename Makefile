@@ -33,6 +33,7 @@ test : target
 	printf "\n\n"
 	for file in $(TESTFILES) ; do \
 		$(BIN)$(TARGET) $${file}; \
+		cat output.txt; \
 		printf "\n\n"; \
 	done \
 
