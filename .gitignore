@@ -1,6 +1,7 @@
 # IDE
 .idea/
 *.json
+.DS_Store
 
 # Binary
 *.o
