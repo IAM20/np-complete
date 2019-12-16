@@ -1,0 +1,1 @@
+void np_solve();
